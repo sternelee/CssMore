@@ -1,0 +1,831 @@
+/*CSS3媒体查询*/
+ 
+/*微信浏览器高度大概少48*/
+ @media (device-height:568px) and (-webkit-min-device-pixel-ratio:2) {
+    /*苹果5*/
+}
+@media (device-height:627px) and (-webkit-min-device-pixel-ratio:2) {
+    /*苹果6*/
+}
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:3) {
+    /*苹果6p */
+}
+/*竖屏*/
+ @media screen and (orientation: portrait) {
+    #toolbar {
+        width: 100%;
+    }
+}
+/*横屏*/
+ @media screen and (orientation: landscape) {
+    #toolbar {
+        position: fixed;
+        width: 2.65em;
+        height: 100%;
+    }
+}
+/*特别字段：*/
+ .special {
+    -webkit-text-size-adjust: none;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    background: -moz-linear-gradient(left, #4d4d4d, 0.4, #4d4d4d, 0.5, white, 0.6, #4d4d4d, #4d4d4d);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, #4d4d4d), color-stop(0.4, #4d4d4d), color-stop(0.5, white), color-stop(0.6, #4d4d4d), color-stop(1, #4d4d4d));
+    background:-webkit-radial-gradient(center center, 300px 300px, #010101, #000);
+    -webkit-user-select: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    vertical-align: baseline;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display:-webkit-box;
+    display:box;
+    -box-flex:1;
+    -webkit-box-flex:1;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    font-weight: lighter;
+    -moz-perspective: 800px;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    /*Avoid flicker on slides transitions for mobile phones #336 */
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+    -webkit-transform-origin:center center;
+    /* Touch detection for Windows 8 */
+    -ms-touch-action: none;
+    /* IE 11 on Windows Phone 8.1*/
+    touch-action: none;
+    /*微信内对图片长按要加上*/
+    pointer-events:none;
+    -webkit-box-sizing: border-box;
+    /* Safari<=5 Android<=3 */
+    -moz-box-sizing: border-box;
+    /* <=28 */
+    box-sizing: border-box;
+}
+/*position定位的元素高于float浮云元素*/
+ 
+/*文字竖排*/
+ p.vertical {
+    width:1em;
+    font-size:30px;
+    letter-spacing:1em;
+    word-break:break-all;
+}
+/*http://blog.dimpurr.com/css-sticky/*/
+ .sticky {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: sticky;
+    top: 15px;
+    // 使用和 Fixed 同样的方式设定位置
+}
+/*多行省略http://www.css88.com/archives/5206*/
+ .text-overflow {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/*移动端字体与元素大小适应，rem是相对HTML字体大小，em是相对父元素大小*/
+ html {
+    font-size: 62.5%;
+    /*10 ÷ 16 × 100% = 62.5%*/
+}
+body {
+    font-size: 1.4rem;
+    /*1.4 × 10px = 14px */
+}
+h1 {
+    font-size: 2.4rem;
+    /*2.4 × 10px = 24px*/
+}
+/*淘宝手机网页适配屏幕解决方案*/
+ 
+/*淘宝的做法是，font-size = 屏幕宽度/16.*/
+ html {
+    font-size:24px;
+}
+div {
+    width: 4rem;
+    height:2rem;
+}
+/*解决IE7的z-index无效问题*/
+ 
+/*为元素的直接父级添加z-index*/
+ .parent {
+    z-index: 999;
+}
+/*常用字体*/
+ p {
+    font-family:"Mcrosoft Yahei", "Georgia", "Times New Roman", "Songti SC", "SimSun", serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family:"Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft Yahei", "WenQuanYi Microhei", sans-serif;
+}
+/*记所有浏览器支持元素透明效果*/
+ .trans {
+    opacity: .7;
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+    /* IE8 */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    /* IE5-7 */
+    filter:alpha(opacity=70);
+}
+/*清除浮动*/
+ 
+/*若子元素存在浮动float,父元素要清除浮动*/
+ 
+/*这时父元素的高度可以自动增加*/
+ li {
+    float: left;
+}
+ul {
+    height: auto;
+    clear: both;
+    overflow: hidden;
+    zoom: 1;
+}
+/*任意元素的水平垂直绝对居中*/
+ .center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*浏览器兼容代码*/
+    -ms-transform: translate(-50%, -50%);
+    /* IE 9 */
+    -moz-transform: translate(-50%, -50%);
+    /* Firefox */
+    -webkit-transform: translate(-50%, -50%);
+    /* Safari and Chrome */
+    -o-transform: translate(-50%, -50%);
+    /* Opera */
+}
+/*修改CSS缺省执行顺序优先级*/
+ .color {
+    color: orange !important;
+}
+/*去除webkit内容浏览器输入元素focus状态下的内边框效果*/
+ 
+/* 以下属性去除输入元素中的focus框效果  */
+ .nofocus {
+    outline: none;
+}
+/*方便换算em定义的字体大小*/
+ body {
+    font-size: 62.5%;
+}
+h1 {
+    font-size: 4.8em;
+    /*这个时候4.8em等于48px */
+}
+/*用图片充当列表标志*/
+ ul {
+    list-style: none
+}
+ul li {
+    background-image: url("path-to-your-image");
+    background-repeat: none;
+    background-position: 0 0.5em;
+}
+/*CSS三角形*/
+ .triangle {
+    border-color: transparent transparent green transparent;
+    border-style: solid;
+    border-width: 0px 300px 300px 300px;
+    height: 0px;
+    width: 0px;
+}
+/*用图片替换文字*/
+ 
+/*有时我们需要在标题栏中使用图片，但是又必须保证搜索引擎能够读到标题，CSS语句可以这样写*/
+ h1 {
+    text-indent:-9999px;
+    background:url("h1-image.jpg") no-repeat;
+    width:200px;
+    height:50px;
+}
+/*获得焦点的表单元素*/
+ input:focus {
+    border: 2px solid green;
+}
+/*固定位置的页首*/
+ 
+/*当页面滚动时，有时需要页首在位置固定不变，CSS语句可以这样写*/
+ body {
+    margin:0;
+    padding:100px 0 0 0;
+}
+div#header {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:auto;
+}
+@media screen {
+    body>div#header {
+        position: fixed;
+    }
+}
+* html body {
+    overflow:hidden;
+}
+* html div#content {
+    height:100%;
+    overflow:auto;
+}
+/*IE6的另一种写法（用于固定位置的页脚）*/
+ * html #footer {
+    position:absolute;
+    top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+/*在IE6中设置PNG图片的透明效果*/
+ .classname {
+    background: url(image.png);
+    _background: none;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.png', sizingMethod='crop');
+}
+/*各类浏览器的专用语句*/
+ 
+/* IE6 and below */
+ * html #uno {
+    color: red
+}
+/* IE7 */
+ *:first-child+html #dos {
+    color: red
+}
+/* IE7, FF, Saf, Opera */
+ html>body #tres {
+    color: red
+}
+/* IE8, FF, Saf, Opera (Everything but IE 6,7) */
+ html>
+/**/
+body #cuatro {
+    color: red
+}
+/* Opera 9.27 and below, safari 2 */
+ html:first-child #cinco {
+    color: red
+}
+/* Safari 2-3 */
+ html[xmlns*=""] body:last-child #seis {
+    color: red
+}
+/* safari 3+, chrome 1+, opera9+, ff 3.5+ */
+ body:nth-of-type(1) #siete {
+    color: red
+}
+/* safari 3+, chrome 1+, opera9+, ff 3.5+ */
+ body:first-of-type #ocho {
+    color: red
+}
+/* saf3+, chrome1+ */
+ @media screen and (-webkit-min-device-pixel-ratio:0) {
+    #diez {
+        color: red
+    }
+}
+/* iPhone / mobile webkit */
+ @media screen and (max-device-width: 480px) {
+    #veintiseis {
+        color: red
+    }
+}
+/* Safari 2 - 3.1 */
+ html[xmlns*=""]:root #trece {
+    color: red
+}
+/* Safari 2 - 3.1, Opera 9.25 */
+ *|html[xmlns*=""] #catorce {
+    color: red
+}
+/* Everything but IE6-8 */
+ :root *> #quince {
+    color: red
+}
+/* IE7 */
+ *+html #dieciocho {
+    color: red
+}
+/* Firefox only. 1+ */
+ #veinticuatro, x:-moz-any-link {
+    color: red
+}
+/* Firefox 3.0+ */
+ #veinticinco, x:-moz-any-link, x:default {
+    color: red
+}
+/***** Attribute Hacks ******/
+ 
+/* IE6 */
+ #once {
+    _color: blue
+}
+/* IE6, IE7 */
+ #doce {
+    *color: blue;
+    /* or #color: blue */
+}
+/* Everything but IE6 */
+ #diecisiete {
+    color
+    /**/
+    : blue
+}
+/* IE6, IE7, IE8 */
+ #diecinueve {
+    color: blue\9;
+}
+/* IE7, IE8 */
+ #veinte {
+    color
+    /*\**/
+    : blue\9;
+}
+/* IE6, IE7 -- acts as an !important */
+ #veintesiete {
+    color: blue !ie;
+}
+/* string after ! can be anything */
+ 
+/*CSS外阴影*/
+ .box-shadow {
+    -moz-box-shadow: 5px 5px 5px #ccc;
+    -webkit-box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 5px #ccc;
+}
+/*CSS内阴影*/
+ .in-shadow {
+    -moz-box-shadow:inset 0 0 10px #000000;
+    -webkit-box-shadow:inset 0 0 10px #000000;
+    box-shadow:inset 0 0 10px #000000;
+}
+/*CSS盒子阴影四周*/
+ .boxshaw {
+    box-shadow: 2px 0 5px rgba(214, 214, 215, 0.9), -2px 0 5px rgba(214, 214, 215, 0.9);
+}
+/*取消IE文本框的滚动条*/
+ textarea {
+    overflow: auto;
+}
+/*文字阴影*/
+ .text-shadow {
+    text-shadow: 1px 1px 1px #666;
+    -webkit-filter: Shadow(Color=#666666, Direction=135, Strength=5);
+    filter: Shadow(Color=#666666, Direction=135, Strength=5);
+}
+/*著名的 Meyer Reset（CSS重置）*/
+ 
+/*请不要使用全局Reset
+*{margin:0;paddin:0;}
+*/
+ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+/* remember to define focus styles! */
+ :focus {
+    outline: 0;
+}
+body {
+    line-height: 1;
+    color: black;
+    background: white;
+}
+ol, ul {
+    list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+ table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content:"";
+}
+blockquote, q {
+    quotes:"""";
+}
+/*CSS圆角*/
+ .border-radius {
+    border-radius: 5px;
+    /* future proofing */
+}
+.border-top-left-radius {
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+}
+/*清除元素浮动的几种方式*/
+ 
+/*http://www.xiaoboy.com/detail/1341545045.html*/
+ 
+/*最简单方法就是在父元素添加overflow:hidden*/
+ .clear {
+    clear: both;
+    font-size: 1px;
+    line-height: 0;
+}
+/* 通过overflow的方式 */
+ .overflow-clear {
+    overflow:auto;
+    /*或者 hidden,scroll,不包括visible */
+    _height:1%;
+    /*设置高度是为了ie6获取haslayout */
+}
+.clearfix:after {
+    /*content:'\0020';*/
+    content:'';
+    display:block;
+    height:0;
+    clear:both
+}
+.clearfix {
+    *zoom:1
+}
+/* display 的方式*/
+ .display-clear {
+    display:inline-block;
+}
+/* position的方式 */
+ .position-clear {
+    position:absolute;
+}
+/* 浮动方式 */
+ .float-clear {
+    float:left;
+    /*或者right，不是none就行*/
+}
+/*zoom 的方式*/
+ .zoom-clear {
+    zoom:1;
+    /* only for IE6.7 因为他们haslayout，ie8以后和标准浏览器都弱化了haslayout */
+}
+/*after伪类+content方式*/
+ .clearfix:after {
+    content:".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/* Hides from IE-mac \*/
+ .clearfix {
+    height: 1%;
+}
+/* End hide from IE-mac */
+ 
+/*IE6-7的绝对定位不显示*/
+ .IE7-absolute {
+    left: 0px;
+}
+/*内联元素如a,span等的居中*/
+ .inline-block {
+    /*父元素设置*/
+    text-align: center;
+    /*内联元素设置*/
+    display: inline-block;
+}
+/*多类属性同时满足时*/
+ .classA.classB {
+    color: red;
+}
+/*ul中的li元素横向排列，并且不超出边框的，用于图片轮播等*/
+ .ul-li {
+    display: block;
+    height: 580px;
+    width: 360px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0 auto;
+}
+.ul-li ul {
+    list-style: none;
+    height: 580px;
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+}
+.ul-li ul li {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    /*IE7兼容*/
+}
+/*三列等高的设置，会根据最高的那列一样*/
+ .left, .center, .right {
+    float: left;
+    margin-bottom: -10000px;
+    padding-bottom: 10000px;
+}
+/*使未知多个导航li或a自动居中，比如轮播中的小圆点*/
+ ul.num {
+    position: absolute;
+    bottom: 8%;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+ul.num li {
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: yellow;
+    margin-left: 10px;
+}
+/*用mask蒙版画多边形的盒子box,只支持webkit,火狐需要用svg图*/
+ .mask-box {
+    width: 300px;
+    height: 300px;
+    -webkit-mask:url(bg.png);
+    /*定义蒙版的图片，可以是各种的图形png*/
+}
+.mask-box img {
+    width: 100%;
+    height: 100%;
+}
+/*absolute元素的水平居中显示 */
+ .absolute-center {
+    position: absolute;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+    /*或者用CSS3*/
+    transform:translateX(-50%);
+}
+/*css3新特性blend蒙版叠加特效*/
+ .blend {
+    background-image: url('mountains.jpg');
+    background-color: #5ece7f;
+    background-blend-mode: multiply;
+}
+/*更多CSS3的混合模式(PS)*/
+ 
+/* http://www.w3cplus.com/css3/css-blend-modes-part-1.html */
+ 
+/*利用clip-path画图，火狐要用svg画图*/
+ .wrapper {
+    -webkit-clip-path: polygon(307px 423px, 431px 204px, 256px 92px, 118px 226px);
+    clip-path: polygon(307px 423px, 431px 204px, 256px 92px, 118px 226px);
+    background: url('mountains.jpg');
+}
+/*<svg width="0" height="0">
+  <clipPath id="clipPolygon">
+    <polygon points="307 423,431 204,256 92,118 226"></polygon>
+  </clipPath>
+</svg>*/
+ .wrapper {
+    -webkit-clip-path: url('#clipPolygon');
+    clip-path: url('#clipPolygon');
+    background: url('mountains.jpg');
+}
+/*背景图定位问题*/
+ 
+/*如果你想定位的位置是距离右边20px，距离底部10px*/
+ .background-position {
+    /*PC端*/
+    background-position: right 20px bottom 10px;
+    /*Android移动端*/
+    background-position: calc(100% - 20px) calc(100% - 10px);
+}
+/*使用JQ
+var el = $(".background-position"),
+    bgWidth = 20,
+    bgHeight = 20;
+ 
+el.css({
+  "background-position": (el.width()-bgWidth+10) + "px " + (el.height()-bgHeight-10) +  "px"
+});
+*/
+ 
+/*class类选择器 如有三个div的class分别为layer-1,layer-2,layer-3*/
+ div[class*="layer-"] {
+    position:absolute;
+    transition:0.1s;
+}
+/*父元素的高度自适应，其子元素必须为positon:relative，此时元素之间才有层级关系*/
+ 
+/*页面3D*/
+ body {
+    background:linear-gradient(to bottom, #f6f7fc 0%, #d5e1e8 40%);
+    transform-style:preserve-3d;
+    transform:perspective(800px);
+}
+/*CSS 3D动画*/
+ .box-3d {
+    perspective:200px;
+    transition:all .07s linear;
+    position:relative;
+    cursor:pointer;
+}
+.box-3d-box {
+    transition:all .3s ease-out;
+    transform:translatez(-25px);
+    transform-style:preserve-3d;
+    pointer-event:none;
+    position:absolute;
+    top:0;
+    left:0;
+    display:block;
+    width:100%;
+    height:100%;
+}
+.box-3d:hover .box-3d-box, .box-3d:focus .box-3d-box {
+    transform:translateZ(-25) rotateX(90deg);
+}
+;
+ 
+/*calc使用*/
+ .calc {
+    width:calc(100% - 20px);
+}
+/*隐藏被旋转(180deg)的 div 元素的背面*/
+ .backface {
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    backface-visibility:hidden;
+}
+/*让字体平滑与清晰*/
+ .font-smoothing {
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*保持动画前后的状态*/
+ .animation-mode {
+    animation-fill-mode:both;
+}
+.animation-forwards {
+    animation-fill-mode:forwards;
+}
+/*表格单元横跨两列的表格*/
+ 
+/*February 表示合并3列单元格*/
+ 
+/*border-collapse: collapse; 合并边框*/
+ 
+/*CSS设置input placeholder文本的样式*/
+ 
+/*http://www.javascript100.com/?p=812 */
+ 
+/*http://html5.9tech.cn/news/2013/1118/38691.html */
+ ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #999;
+}
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #999;
+}
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #999;
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #999;
+}
+/*滚动条样式*/
+ 
+/*
+http://blog.csdn.net/sweetsuzyhyf/article/details/8089158
+http://www.lyblog.net/2013/314.html
+*/
+ ::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+::-webkit-scrollbar-track {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .2) inset;
+}
+::-webkit-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, .2) inset;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+/*图片的自适应与windows平台缩放图片时，可能出现图像失真现象*/
+ img, object {
+    max-width: 100%;
+}
+img {
+    -ms-interpolation-mode: bicubic;
+}
+/*或者，Ethan Marcotte的imgSizer.js
+addLoadEvent(function() { var imgs = document.getElementById("content").getElementsByTagName("img"); imgSizer.collate(imgs); });*/
+ 
+/*CSS3 blur滤镜实现*/
+ 
+/*<img src="mm1.jpg" class="blur">*/
+ .blur {
+    -webkit-filter: blur(10px);
+    /* Chrome, Opera */
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+/*浅谈inline-block及解决空白间距http://www.jb51.net/css/76707.html*/
+ .inline-block ul {
+    letter-spacing:-4px;
+    word-spacing:-4px;
+    font-size:0;
+}
+/*纯CSS3选项卡*/
+ input#value2:checked ~ .ul-con > li:nth-child(2) .li-con {
+    height: 50%;
+    bottom: 0;
+}
+/*自定义button,input样式*/
+ button, input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor:pointer;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+    padding:0;
+    border:0
+}
+/*页面加灰色蒙版*/
+ 
+/*由于不支持IE10以上，可用<meta http-equiv="X-UA-Compatible" content="IE=9">来实现*/
+ html, body, table, div, span, a, h1 {
+    filter:gray;
+}
+html {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    -webkit-filter: grayscale(1);
+}
+/*隐藏说明文字*/
+ .textIndent {
+    /*one*/
+    font-size:0;
+    line-height:0;
+    /*two*/
+    text-indent:-99999;
+    overflow:hidden;
+    /*three*/
+    position:absolute;
+    z-index:-1;
+    /*four*/
+    overflow:hidden;
+    line-height:400px;
+}
+/*移动端实现类似hover效果 http://www.jb51.net/css/229841.html*/
+ body {
+    webkit-tap-highlight-color:transparent;
+}
+.mobiel:active {
+    background:red;
+}
+/*并且加上这句  document.body.addEventListener('touchstart', function () { });   */
+ 
+/*背景图片不滚动*/
+ .background-fixed {
+    background-attachment:fixed;
+}
+/*父元素与子元素之间的margin-top问题(css hack)*/
+ 
+/*解决方法：
+1、修改父元素的高度，增加padding-top样式模拟（padding-top：1px；常用）
+2、为父元素添加overflow：hidden；样式即可（完美）
+3、为父元素或者子元素声明浮动（float：left；可用）
+4、为父元素添加border（border:1px solid transparent可用）
+5、为父元素或者子元素声明绝对定位*/
+ .box-father {
+    overflow:hidden;
+}
+.box {
+    margin-top:100px;
+}
